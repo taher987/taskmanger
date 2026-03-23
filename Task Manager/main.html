@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dig.css">
+    <script src="task.js"></script>
+    <title>Pro Task Dashboard</title>
+</head>
+<body>
+
+<div class="dashboard-container">
+    <aside class="sidebar">
+        <div class="logo">MT<span>.dev</span></div>
+        <nav>
+            <div class="nav-item active" onclick="switchTab(this, 'tasks')">📋 Tasks</div>
+            <div class="nav-item" onclick="switchTab(this, 'projects')">📊 Stats</div>
+        </nav>
+        <div class="theme-switch" onclick="toggleTheme()">🌙 Dark Mode</div>
+    </aside>
+
+    <main class="main-content">
+        <section id="tasks-tab" class="tab-content active">
+            <header>
+                <h1>Workflow Dashboard</h1>
+                <div class="stats-mini">
+                    <span>Active: <b id="active-count">0</b></span> | 
+                    <span>Done: <b id="done-count">0</b></span>
+                </div>
+            </header>
+
+            <div class="controls-bar">
+                <input type="text" id="taskInput" placeholder="Task name...">
+                <input type="date" id="taskDate">
+                <select id="taskPriority">
+                    <option value="high">High</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="low">Low</option>
+                </select>
+                <button class="btn-primary" onclick="addTask()">+ Add Task</button>
+            </div>
+
+            <div class="list-header">
+                <span>Status/Task</span><span>Due Date</span><span>Priority</span><span>Action</span>
+            </div>
+            <div id="taskGrid" class="grid-body"></div>
+        </section>
+
+        <section id="projects-tab" class="tab-content">
+            <h1>Activity Overview</h1>
+            <div class="stat-card">
+                <h3 id="total-stat">0</h3>
+                <p>Total Tasks Created</p>
+            </div>
+        </section>
+    </main>
+</div>
+</div>
+
+</body>
+</html>
